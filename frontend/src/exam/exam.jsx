@@ -12,11 +12,11 @@ export default class Exam extends Component {
 		super(props);
 		this.state = { 	name: '',
 						type: '',
-						date: '',
+						local: '',
 						list: [] };
 		this.handleChangeName = this.handleChangeName.bind(this);
 		this.handleChangeType = this.handleChangeType.bind(this);
-		this.handleChangeDate = this.handleChangeDate.bind(this);
+		this.handleChangeLocal = this.handleChangeLocal.bind(this);
 
 		this.handleAdd = this.handleAdd.bind(this);
 		this.handleSearch = this.handleSearch.bind(this)
@@ -33,8 +33,8 @@ export default class Exam extends Component {
 	handleChangeType(b) {
 		this.setState({ ...this.state, type: b.target.value });
 	}
-	handleChangeDate(c) {
-		this.setState({ ...this.state, date: c.target.value });
+	handleChangeLocal(c) {
+		this.setState({ ...this.state, local: c.target.value });
 	}
 	refresh(name = '') {
 		const search = name ? `&name__regex=/${name}/` : ''
@@ -48,8 +48,8 @@ export default class Exam extends Component {
 	handleAdd() {
 		const name = this.state.name;
 		const type = this.state.type;
-		const date = this.state.date;
-		axios.post(URL, { name, type, date })
+		const date = this.state.local;
+		axios.post(URL, { name, type, local })
 			.then(resp => this.refresh())
 	}
 	handleMarkAsDone(exam) {
@@ -74,10 +74,10 @@ export default class Exam extends Component {
 				<ExamForm
 					name={this.state.name}
 					type={this.state.type}
-					date={this.state.date}
+					date={this.state.local}
 					handleChangeName={this.handleChangeName}
 					handleChangeType={this.handleChangeType}
-					handleChangeDate={this.handleChangeDate}
+					handleChangeLocal={this.handleChangeLocal}
 					handleAdd={this.handleAdd}
 					handleSearch={this.handleSearch}
 					handleClear={this.handleClear}

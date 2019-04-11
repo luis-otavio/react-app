@@ -39,7 +39,7 @@ export default props => {
 				<tr>
 					<th>Nome do paciente</th>
 					<th>Tipo de exame</th>
-					<th>Data do exame</th>
+					<th>Local do exame</th>
 					<th className='tableActions'>Ações</th>
 				</tr>
 			</thead>

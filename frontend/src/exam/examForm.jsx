@@ -3,7 +3,7 @@ import Grid from '../template/grid';
 import IconButton from '../template/iconButton';
 export default props => (
 	<div role="form" className="examForm">
-		<Grid cols="6 4 5">
+		<Grid cols="5 4 5">
 			<input
 				id="name"
 				className="form-control"
@@ -13,7 +13,7 @@ export default props => (
 			/>
 		</Grid>
 		
-		<Grid cols="5 2 3">
+		<Grid cols="5 2 2">
 			<input				
 				id="type"
 				className="form-control"
@@ -23,12 +23,13 @@ export default props => (
 			/>
 		</Grid>
 
-		<Grid cols="4 1 2">
-			<input type="date"
-				id="date"
+		<Grid cols="5 2 3">
+			<input
+				id="local"
 				className="form-control"
-				onChange={props.handleChangeDate}
-				value={props.date}
+				placeholder="Local do exame"
+				onChange={props.handleChangeLocal}
+				value={props.local}
 			/>
 		</Grid>
 
